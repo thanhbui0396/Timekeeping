@@ -235,7 +235,7 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                   InkWell(
                     onTap: () {
-                      GoRouter.of(context).pushNamed(RouterName.regisPage);
+                      GoRouter.of(context).pushNamed(RouterPath.regisPage);
                     },
                     child: const Text(
                       TextApp.singUp,

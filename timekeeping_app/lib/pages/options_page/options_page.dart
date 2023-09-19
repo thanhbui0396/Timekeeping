@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:timekeeping_app/apps/untils/app_colors.dart';
+import 'package:timekeeping_app/providers/check.dart';
 
-class OptionesPage extends StatefulWidget {
-  const OptionesPage({super.key});
+class OptionsPage extends StatefulWidget {
+  const OptionsPage({super.key});
 
   @override
-  State<OptionesPage> createState() => _OptionesPageState();
+  State<OptionsPage> createState() => _OptionsPageState();
 }
 
-class _OptionesPageState extends State<OptionesPage> {
+class _OptionsPageState extends State<OptionsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,7 +28,9 @@ class _OptionesPageState extends State<OptionesPage> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  context.read<CheckLogin>().checkLogin();
+                },
                 style: ElevatedButton.styleFrom(
                     shape: const RoundedRectangleBorder(
                       borderRadius: BorderRadius.all(
@@ -54,7 +58,7 @@ class _OptionesPageState extends State<OptionesPage> {
                     elevation: 5,
                     backgroundColor: const Color(0xFFFE5901)),
                 child: const Text(
-                  'Tổ chức',
+                  'Doanh nghiệp',
                   style: TextStyle(fontSize: 30, color: Colors.black),
                 ),
               ),
